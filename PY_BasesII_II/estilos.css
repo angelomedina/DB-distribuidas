@@ -81,8 +81,8 @@ body
 }
 
 .cardT{
-    font-size:16px;
-    color:#000000;
+    font-size:18px;
+    color: seagreen;
     max-width: 500px;
     text-align: left;
 }

@@ -28,34 +28,35 @@
     </div>
     <div class="card-block">
         <div class="contenido">
-            <form  id="contenidoI" onsubmit="return validarFormulario()">
-                <h6 class="cardT">Registro de clientes</h6><br>
 
-                <div class="container" style="width: 35rem;" align="center">
+                <h6 class="cardT">Registro de clientes</h6><br>
+                <div class="container" style="width: 60rem;" align="center">
                     <div class="row col-xs-12">
-                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_registro_clientes" placeholder="cantidad" required  ><br>
-                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_registro_clientes" placeholder="tiempo(s)" required  >
+                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_registro_clientes" placeholder="cantidad" required  ><br>&nbsp;&nbsp;&nbsp;
+                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_registro_clientes" placeholder="tiempo(s)" required   ><br>&nbsp;&nbsp;&nbsp;
+                        <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_registro_clientes" value="run" onclick="registroClientes()"/> </a>
                     </div>
-                </div><br>
+
+                </div>
+                <br>
 
                 <h6 class="cardT">Activar vales</h6><br>
-                <div class="container" style="width: 35rem;">
+                <div class="container" style="width: 60rem;">
                     <div class="row col-xs-12">
-                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_realizar_solicitudes" placeholder="cantidad" required  ><br>
-                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_realizar_solicitudes" placeholder="tiempo(s)" required  >
+                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_realizar_solicitudes" placeholder="cantidad" required  ><br>&nbsp;&nbsp;&nbsp;
+                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_realizar_solicitudes" placeholder="tiempo(s)" required   ><br>&nbsp;&nbsp;&nbsp;
+                        <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_activar_vales" value="run" onclick="getUsuarios()"/> </a>
                     </div>
                 </div><br>
 
                 <h6 class="cardT">Realizar solicitudes</h6><br>
-                <div class="container" style="width: 35rem;">
+                <div class="container" style="width: 60rem;">
                     <div class="row col-xs-12">
-                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_activar_vales" placeholder="cantidad" required  ><br>
-                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_activar_vales" placeholder="tiempo(s)" required  >
+                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_activar_vales" placeholder="cantidad" required  ><br>&nbsp;&nbsp;&nbsp;
+                        <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_activar_vales" placeholder="tiempo(s)" required   ><br>&nbsp;&nbsp;&nbsp;
+                        <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_realizar_solicitud" value="run" onclick="realizarPedido()"/> </a>
                     </div>
                 </div><br>
-
-            </form>
-            <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_sqlserver" value="sql server" onclick="realizarPedido()"/> </a>
         </div>
     </div>
 </div><br><br>

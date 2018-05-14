@@ -13,6 +13,9 @@ if ($_GET['func']=='activarVale()'){
 if ($_GET['func']=='realizarPedido()'){
     realizarPedido($_GET['telefono'],$_GET['documento']);
 }
+if ($_GET['func']=='getUsuarios()'){
+    getUsuarios();
+}
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //FUNCIONES
@@ -64,4 +67,32 @@ function realizarPedido($telefono,$documento){
         die( print_r( sqlsrv_errors(), true) );
     }
     sqlsrv_free_stmt( $stmt);
+}
+
+function getUsuarios(){
+
+    $serverName = "localhost\sqlexpress,1433";
+    $connectionInfo = array( "Database"=>"ServidorCentral", "UID"=>"sa", "PWD"=>"deathnote");
+    $conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+    if( $conn === false ) {
+        die( print_r( sqlsrv_errors(), true));
+    }
+
+    $sql = "SELECT telefono FROM usuario";
+    $stmt = sqlsrv_query($conn, $sql);
+
+    $result = array();
+
+    do {
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){
+            $result[] = $row;
+        }
+    }   while (sqlsrv_next_result($stmt));
+
+
+    sqlsrv_free_stmt($stmt);
+    sqlsrv_close($conn);
+
+    echo json_encode($result);
 }
