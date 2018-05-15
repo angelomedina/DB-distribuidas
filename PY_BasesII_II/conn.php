@@ -11,7 +11,7 @@ if ($_GET['func']=='activarVale()'){
 }
 
 if ($_GET['func']=='realizarPedido()'){
-    realizarPedido($_GET['telefono'],$_GET['documento']);
+    realizarPedido($_GET['telefono']);
 }
 if ($_GET['func']=='getUsuarios()'){
     getUsuarios();
@@ -57,10 +57,10 @@ function activarVale($telefono,$monto){
     sqlsrv_free_stmt( $stmt);
 }
 
-function realizarPedido($telefono,$documento){
+function realizarPedido($telefono){
 
     $conn = conexion();
-    $sql ="exec realizarPedido @telefono='$telefono',@documento='$documento',@respuesta='0'";
+    $sql ="exec realizarPedido @telefono='$telefono',@respuesta='0'";
 
     $stmt = sqlsrv_query( $conn, $sql );
     if( $stmt === false) {

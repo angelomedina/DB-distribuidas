@@ -1,13 +1,168 @@
 var telefonosUsuarios = [];
 
+function numeroAleatorio(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
+function generaClientes() {
+
+    var cantidad=document.getElementById('cantidad_registro_clientes').value;
+    var segundos=document.getElementById('tiempo_registro_clientes').value;
+
+    //verificacion del formulario
+
+    if ( (cantidad == null || cantidad.length == 0 || /^\s+$/.test(cantidad)) || (segundos == null || segundos.length == 0 || /^\s+$/.test(segundos))) {
+         alert("Verifique que los datos este completos");
+    }
+    else {
+
+        var ntelefono = parseInt(cantidad);
+        var ntiempo = parseInt(segundos);
+
+        //+++++++++++++++++++++++++++++++++
+        //obtengo la lista de los Usuarios(endpoint)
+        getUsuarios();
+
+        //+++++++++++++++++++++++++++++++++
+        var cont = 1;
+        var id = setInterval(function () {
+
+            //generar el telefono
+            //**************************************************
+            var random = [];
+            var temp = Math.floor(Math.random() * 9000) + 999
+            var temp2 = Math.floor(Math.random() * 9000) + 999
+
+            if (random.indexOf(temp) == -1) {
+                random.push(temp + "-" + temp2);
+                var telefono = random[0];
+
+                if (telefono in telefonosUsuarios) {
+                    console.log("telefono repetido: no agregado")
+                }
+                else {
+                    registroClientes(telefono.toString())
+                }
+                cont++;
+            }
+            //**************************************************
+
+            //para la secuencia
+            //*************************************************
+            if (cont == ntelefono + 1) {
+                clearInterval(id);
+                alert("Fin registro clientes");
+            }
+        }, (ntiempo * 1000));
+    }
+}
+
+function generaVales() {
+
+    var cantidad=document.getElementById('cantidad_activar_vales').value;
+    var segundos=document.getElementById('tiempo_activar_vales').value;
+
+    //verificacion del formulario
+
+    if ( (cantidad == null || cantidad.length == 0 || /^\s+$/.test(cantidad)) || (segundos == null || segundos.length == 0 || /^\s+$/.test(segundos))) {
+        alert("Verifique que los datos este completos");
+    }
+    else {
+
+        var ntelefono = parseInt(cantidad);
+        var ntiempo = parseInt(segundos);
+
+        //+++++++++++++++++++++++++++++++++
+        //obtengo la lista de los Usuarios(endpoint)
+        getUsuarios();
+
+        //+++++++++++++++++++++++++++++++++
+        var cont = 1;
+        var id = setInterval(function () {
+
+            if(telefonosUsuarios.length >= 1) {
+
+                var cantidadTelefonos = telefonosUsuarios.length;
+                var posicion = numeroAleatorio(0, cantidadTelefonos);
+
+                var telefono = telefonosUsuarios[posicion];
+
+                activarVale(telefono);
+            }
+            else{
+                alert("No hay telefonos registrados en DB");
+            }
+            cont++;
+
+            //**************************************************
+
+            //para la secuencia
+            //*************************************************
+            if (cont == ntelefono + 1) {
+                clearInterval(id);
+                alert("Fin realizar pedidos");
+            }
+        }, (ntiempo * 1000));
+    }
+}
+
+function generaPedidos() {
+
+    var cantidad=document.getElementById('cantidad_realizar_solicitudes').value;
+    var segundos=document.getElementById('tiempo_realizar_solicitudes').value;
+
+    //verificacion del formulario
+
+    if ( (cantidad == null || cantidad.length == 0 || /^\s+$/.test(cantidad)) || (segundos == null || segundos.length == 0 || /^\s+$/.test(segundos))) {
+        alert("Verifique que los datos este completos");
+    }
+    else {
+
+        var ntelefono = parseInt(cantidad);
+        var ntiempo = parseInt(segundos);
+
+        //+++++++++++++++++++++++++++++++++
+        //obtengo la lista de los Usuarios(endpoint)
+        getUsuarios();
+
+        //+++++++++++++++++++++++++++++++++
+        var cont = 1;
+        var id = setInterval(function () {
+
+            if(telefonosUsuarios.length >= 1) {
+
+                var cantidadTelefonos = telefonosUsuarios.length;
+                var posicion = numeroAleatorio(0, cantidadTelefonos);
+
+                var telefono = telefonosUsuarios[posicion];
+
+                realizarPedido(telefono);
+            }
+            else{
+                alert("No hay telefonos registrados en DB");
+            }
+            cont++;
+
+            //**************************************************
+
+            //para la secuencia
+            //*************************************************
+            if (cont == ntelefono + 1) {
+                clearInterval(id);
+                alert("Fin realizar pedidos");
+            }
+        }, (ntiempo * 1000));
+    }
+}
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //CONEXIONES DB: JAVASCRIP + PHP + SQL SERVER
 
 // procedimiento almacenado para registrar cleinte
-function registroClientes() {
+function registroClientes(ptelefono) {
     //++++++++++++++++++++++++++++++++
     //PARAMETROS
-    var telefono="1111-0000";
+    var telefono=ptelefono;
     var nombre="0";
     var primerApellido="0";
     var segundoApellido="0";
@@ -20,8 +175,7 @@ function registroClientes() {
 
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
-                console.log(this.response.toString())
-                alert("Solicitud registro cleinete enviada");
+                console.log("Solicitud registro cliente enviada");
             }
             else{console.log(this.statusText, this.status)}
         }
@@ -32,10 +186,10 @@ function registroClientes() {
 }
 
 // procedimiento almacenado para activar vales a un cliente
-function activarVale() {
+function activarVale(ptelefono) {
     //++++++++++++++++++++++++++++++++
     //PARAMETROS
-    var telefono="0010-0000";
+    var telefono=ptelefono;
     var monto   =500;
 
     //++++++++++++++++++++++++++++++++++
@@ -45,7 +199,7 @@ function activarVale() {
 
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
-                alert("Activacion de vale exitosa")
+                console.log("Solicitud activacion de vale enviada");
             }
             else{console.log(this.statusText, this.status)}
         }
@@ -56,12 +210,10 @@ function activarVale() {
 }
 
 // procedimento almacenado para realizar solicitudes
-function realizarPedido() {
+function realizarPedido(ptelefono) {
     //++++++++++++++++++++++++++++++++
     //PARAMETROS
-    var telefono  ="0010-0000";
-    var documento =01010100;
-
+    var telefono  =ptelefono;
 
     //++++++++++++++++++++++++++++++++++
     //SOLICITUD
@@ -70,13 +222,12 @@ function realizarPedido() {
 
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
-                console.log(this.response.toString())
-                alert("Pedido exitoso")
+                console.log("Solicitud realizar pedido enviada");
             }
             else{console.log(this.statusText, this.status)}
         }
     };
-    xhttp.open("GET", "conn.php?func=realizarPedido()&telefono="+telefono+"&documento="+documento.toString(), true);
+    xhttp.open("GET", "conn.php?func=realizarPedido()&telefono="+telefono, true);
     xhttp.send();
 
 }
