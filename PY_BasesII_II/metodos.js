@@ -1,10 +1,27 @@
+google.charts.load('current', {'packages':['gauge']});
+google.charts.setOnLoadCallback(drawChart);
+
 var telefonosUsuarios = [];
+var conexionesDB=0;
+var megasNodo=0;
+var megasCentral=0;
+
+
+function cargaGraficos() {
+    drawChart(0);
+}
 
 function numeroAleatorio(min, max) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
 function generaClientes() {
+
+    //conexionesDB=0;
+
+    //inicio de tiempo de ejecucion
+    console.time('Tiempo registro clientes');
+    //console.timeEnd('Tiempo registro clientes');
 
     var cantidad=document.getElementById('cantidad_registro_clientes').value;
     var segundos=document.getElementById('tiempo_registro_clientes').value;
@@ -51,6 +68,7 @@ function generaClientes() {
             //*************************************************
             if (cont == ntelefono + 1) {
                 clearInterval(id);
+                console.timeEnd('Tiempo registro clientes');
                 alert("Fin registro clientes");
             }
         }, (ntiempo * 1000));
@@ -58,6 +76,10 @@ function generaClientes() {
 }
 
 function generaVales() {
+
+    //conexionesDB=0;
+
+    console.time('Tiempo genera vales');
 
     var cantidad=document.getElementById('cantidad_activar_vales').value;
     var segundos=document.getElementById('tiempo_activar_vales').value;
@@ -100,6 +122,7 @@ function generaVales() {
             //*************************************************
             if (cont == ntelefono + 1) {
                 clearInterval(id);
+                console.timeEnd('Tiempo genera vales');
                 alert("Fin realizar pedidos");
             }
         }, (ntiempo * 1000));
@@ -107,6 +130,10 @@ function generaVales() {
 }
 
 function generaPedidos() {
+
+    //conexionesDB=0;
+
+    console.time('Tiempo genera Pedidos');
 
     var cantidad=document.getElementById('cantidad_realizar_solicitudes').value;
     var segundos=document.getElementById('tiempo_realizar_solicitudes').value;
@@ -149,11 +176,14 @@ function generaPedidos() {
             //*************************************************
             if (cont == ntelefono + 1) {
                 clearInterval(id);
+                console.timeEnd('Tiempo genera pedidos');
                 alert("Fin realizar pedidos");
             }
         }, (ntiempo * 1000));
     }
 }
+
+
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //CONEXIONES DB: JAVASCRIP + PHP + SQL SERVER
@@ -175,6 +205,11 @@ function registroClientes(ptelefono) {
 
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
+                getTamañoCentral();
+                getTamañoNodo();
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
                 console.log("Solicitud registro cliente enviada");
             }
             else{console.log(this.statusText, this.status)}
@@ -199,6 +234,11 @@ function activarVale(ptelefono) {
 
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
+                getTamañoCentral();
+                getTamañoNodo();
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
                 console.log("Solicitud activacion de vale enviada");
             }
             else{console.log(this.statusText, this.status)}
@@ -222,6 +262,11 @@ function realizarPedido(ptelefono) {
 
         if (this.readyState == 4 && this.status == 200) {
             if(this.statusText== "OK" && this.status == 200) {
+                getTamañoCentral();
+                getTamañoNodo();
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
                 console.log("Solicitud realizar pedido enviada");
             }
             else{console.log(this.statusText, this.status)}
@@ -246,6 +291,10 @@ function getUsuarios() {
                 var json = this.response;
                 var arr = JSON.parse(json);
 
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
+
                 for (var i = 0; i < arr.length; i++){
                     var obj = arr[i];
 
@@ -263,4 +312,102 @@ function getUsuarios() {
     xhttp.open("GET", "conn.php?func=getUsuarios()", true);
     xhttp.send();
 
+}
+
+//obtine el tamano de DB Central
+function getTamañoCentral(){
+
+    //++++++++++++++++++++++++++++++++++
+    //SOLICITUD
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                var json = this.response;
+                var arr = JSON.parse(json);
+
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
+
+                for (var i = 0; i < arr.length; i++){
+                    var obj = arr[i];
+
+                    for (var key in obj){
+
+                        if(key.toString() === 'database_size'){
+                            var value = obj[key];
+                            console.log("Tamaño DB Central: "+value)
+                        }
+
+                    }
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=getTamañoCentral()", true);
+    xhttp.send();
+
+}
+
+//obtine el tamano de DB Nodo
+function getTamañoNodo(){
+
+    //++++++++++++++++++++++++++++++++++
+    //SOLICITUD
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                var json = this.response;
+                var arr = JSON.parse(json);
+
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
+
+                for (var i = 0; i < arr.length; i++){
+                    var obj = arr[i];
+
+                    for (var key in obj){
+
+                        if(key.toString() === 'database_size'){
+                            var value = obj[key];
+                            console.log("Tamaño DB Nodo: "+value)
+                        }
+
+                    }
+                }
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=getTamañoCentral()", true);
+    xhttp.send();
+
+}
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//GRAFICO
+function drawChart(Conn) {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Conexiones', Conn]
+    ]);
+
+    var options = {
+        width: 500, height: 120,
+        redFrom: 90, redTo: 100,
+        yellowFrom:75, yellowTo: 90,
+        minorTicks: 5
+    };
+
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    chart.draw(data, options);
 }

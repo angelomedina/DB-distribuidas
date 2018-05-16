@@ -183,11 +183,10 @@ exec activarVale '1111-1111',1000,0
 
 
 create PROCEDURE realizarPedido
-    @telefono		   varchar(9),
-	@documento         varbinary(max), 
+  @telefono		   varchar(9),
 	@respuesta         BIT OUTPUT
 AS
-Declare 
+Declare
    @montoDisponible int,
    @resto int,
    @idSolicitud int,
@@ -202,18 +201,18 @@ Declare
 						   set @resto = @montoDisponible-500;
 
 						       if(@montoDisponible >= 500)
-							        begin 
+							        begin
 
 									  --verificamos que usuario y saldo sean suficientes(de atras)
 
 									  insert into solicitud(telefono,fecha,montoCompra,cantidad,color,estado) values(@telefono,@fecha,500,1,'N','T');
-									  
+
 									  --buscamos la solicitud
 									  set @idSolicitud  = (select id from solicitud where telefono=@telefono and fecha=@fecha);
-				
+
 
 									  --insertamos documento
-									  insert into documento(documento,idSolicitud) values(@documento,@idSolicitud);
+									  insert into documento(documento,idSolicitud) values(0x45003A005C0044006F006300630075006D0065006E0074006F0073002000,@idSolicitud);
 
 									  --solicitud central
 									  insert into [localhost].ServidorCentral.dbo.solicitud (id,fecha,monto,telefono) values(@idSolicitud ,@fecha,500,@telefono);
@@ -224,7 +223,7 @@ Declare
 
 
 									  SET @respuesta = 1
-									  SELECT @respuesta									 
+									  SELECT @respuesta
 								    end
 								else
 									SET @respuesta = 0
@@ -241,6 +240,7 @@ Declare
 					END CATCH
 		SET NOCOUNT OFF;
    end
+
 GO
 
 
