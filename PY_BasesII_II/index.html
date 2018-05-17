@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1">
     <title>DB distribuidas </title>
 
     <!--Grafico -->
@@ -14,74 +14,56 @@
     <!-- Material Design for Bootstrap -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
-<body onload="cargaGraficos()">
+<body onload="cargaGraficos()" style="background-color:darkseagreen"><br><br>
 
-<!--login SQL-->
-<div class="card text-white bg-primary mb-3" style="max-width: 500rem;">
-    <br><br><label class="titulo-label">1.Operaciones</label><br><br>
-</div><br><br>
 
-<div class="card" style="width: 50rem;">
+
+<div class="card">
     <div class="card-header">
-        <label class="titulo-label-2">SQL Server</label><br><br><br>
-        <div  align="center" id="chart_div" style="width: 490px; height: 110px;"></div><br><br>
+        <label class="titulo-label-2">SQL Server</label><br>
+
+                <div  id="chart_div" align="center" style="width: 570px; height: 110px;"></div><br>
+                <div  id="table_div"></div>
     </div>
     <div class="card-block">
+        <button class="w3-button w3-xlarge w3-circle w3-red w3-card-4" onclick="resetGraficos()">+</button>
         <div class="contenido">
-
-                <h6 class="cardT">Registro de clientes</h6><br>
-                <div class="container" style="width: 60rem;" align="center">
+                <h6 class="cardT">Registro de clientes</h6>
+                <div class="container"  align="center">
                     <div class="row col-xs-12">
                         <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_registro_clientes" placeholder="cantidad" required  ><br>&nbsp;&nbsp;&nbsp;
                         <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_registro_clientes" placeholder="tiempo(s)" required   ><br>&nbsp;&nbsp;&nbsp;
                         <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_registro_clientes" value="run" onclick="generaClientes()"/> </a>
                     </div>
-
                 </div>
-                <br>
 
-                <h6 class="cardT">Activar vales</h6><br>
-                <div class="container" style="width: 60rem;">
+                <h6 class="cardT">Activar vales</h6>
+                <div class="container">
                     <div class="row col-xs-12">
                         <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_activar_vales" placeholder="cantidad" required  ><br>&nbsp;&nbsp;&nbsp;
                         <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_activar_vales" placeholder="tiempo(s)" required   ><br>&nbsp;&nbsp;&nbsp;
                         <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_activar_vales" value="run" onclick="generaVales()"/> </a>
                     </div>
-                </div><br>
+                </div>
 
-                <h6 class="cardT">Realizar solicitudes</h6><br>
-                <div class="container" style="width: 60rem;">
+                <h6 class="cardT">Realizar solicitudes</h6>
+                <div class="container">
                     <div class="row col-xs-12">
                         <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="cantidad_realizar_solicitudes" placeholder="cantidad" required  ><br>&nbsp;&nbsp;&nbsp;
                         <input type="number" style="width : 100px; heigth : 1px" lass="col-xs-6" class="form-control form-control-lg" id="tiempo_realizar_solicitudes" placeholder="tiempo(s)" required   ><br>&nbsp;&nbsp;&nbsp;
                         <a  target="_self" > <input class="btn btn-primary" type="submit" id="btn_realizar_solicitud" value="run" onclick="generaPedidos()"/> </a>
                     </div>
-                </div><br>
+                </div>
         </div>
     </div>
 </div><br><br>
 
-
-
-<!--grafico -->
-<div class="card text-white bg-primary mb-3" style="max-width: 500rem;">
-    <br><br><label class="titulo-label">4.Gráfico</label><br><br>
-</div><br><br>
-
-<div class="card" style="width: 80rem;">
-    <div class="card-body">
-        <br><br><h5 class="titulo-label-4">Tabla</h5><br><br>
-
-
-
-    </div>
-</div><br><br>
 </body>
 
 </html>

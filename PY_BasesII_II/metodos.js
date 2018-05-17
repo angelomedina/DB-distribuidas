@@ -1,14 +1,36 @@
 google.charts.load('current', {'packages':['gauge']});
 google.charts.setOnLoadCallback(drawChart);
 
+
+google.charts.load('current', {'packages':['table']});
+google.charts.setOnLoadCallback(drawTable);
+
 var telefonosUsuarios = [];
 var conexionesDB=0;
-var megasNodo=0;
-var megasCentral=0;
+var megasNodo="0";
+var megasCentral="0";
 
+
+function resetGraficos() {
+    conexionesDB=0;
+    megasNodo="0";
+    megasCentral="0";
+    drawTable("0","0");
+    drawChart(0);
+
+    document.getElementById('cantidad_registro_clientes').value="";
+    document.getElementById('tiempo_registro_clientes').value="";
+    document.getElementById('cantidad_activar_vales').value="";
+    document.getElementById('tiempo_activar_vales').value="";
+    document.getElementById('cantidad_realizar_solicitudes').value="";
+    document.getElementById('tiempo_realizar_solicitudes').value="";
+
+}
 
 function cargaGraficos() {
+    drawTable("0","0");
     drawChart(0);
+
 }
 
 function numeroAleatorio(min, max) {
@@ -17,10 +39,11 @@ function numeroAleatorio(min, max) {
 
 function generaClientes() {
 
-    //conexionesDB=0;
 
     //inicio de tiempo de ejecucion
-    console.time('Tiempo registro clientes');
+    var start = new Date().getTime();
+
+
     //console.timeEnd('Tiempo registro clientes');
 
     var cantidad=document.getElementById('cantidad_registro_clientes').value;
@@ -68,8 +91,9 @@ function generaClientes() {
             //*************************************************
             if (cont == ntelefono + 1) {
                 clearInterval(id);
-                console.timeEnd('Tiempo registro clientes');
-                alert("Fin registro clientes");
+                var end = new Date().getTime();
+                var time = end - start;
+                alert("Fin registro clientes, duracion: "+time);
             }
         }, (ntiempo * 1000));
     }
@@ -77,9 +101,7 @@ function generaClientes() {
 
 function generaVales() {
 
-    //conexionesDB=0;
-
-    console.time('Tiempo genera vales');
+    var start = new Date().getTime();
 
     var cantidad=document.getElementById('cantidad_activar_vales').value;
     var segundos=document.getElementById('tiempo_activar_vales').value;
@@ -122,8 +144,9 @@ function generaVales() {
             //*************************************************
             if (cont == ntelefono + 1) {
                 clearInterval(id);
-                console.timeEnd('Tiempo genera vales');
-                alert("Fin realizar pedidos");
+                var end = new Date().getTime();
+                var time = end - start;
+                alert("Fin genera vales, duracion: "+time);
             }
         }, (ntiempo * 1000));
     }
@@ -131,9 +154,7 @@ function generaVales() {
 
 function generaPedidos() {
 
-    //conexionesDB=0;
-
-    console.time('Tiempo genera Pedidos');
+    var start = new Date().getTime();
 
     var cantidad=document.getElementById('cantidad_realizar_solicitudes').value;
     var segundos=document.getElementById('tiempo_realizar_solicitudes').value;
@@ -176,8 +197,11 @@ function generaPedidos() {
             //*************************************************
             if (cont == ntelefono + 1) {
                 clearInterval(id);
-                console.timeEnd('Tiempo genera pedidos');
-                alert("Fin realizar pedidos");
+
+                var end = new Date().getTime();
+                var time = end - start;
+                alert("Fin genera pedidos, duracion: "+time);
+
             }
         }, (ntiempo * 1000));
     }
@@ -210,7 +234,6 @@ function registroClientes(ptelefono) {
                 conexionesDB=conexionesDB+1;
                 //grafico
                 drawChart(conexionesDB);
-                console.log("Solicitud registro cliente enviada");
             }
             else{console.log(this.statusText, this.status)}
         }
@@ -239,7 +262,6 @@ function activarVale(ptelefono) {
                 conexionesDB=conexionesDB+1;
                 //grafico
                 drawChart(conexionesDB);
-                console.log("Solicitud activacion de vale enviada");
             }
             else{console.log(this.statusText, this.status)}
         }
@@ -267,7 +289,6 @@ function realizarPedido(ptelefono) {
                 conexionesDB=conexionesDB+1;
                 //grafico
                 drawChart(conexionesDB);
-                console.log("Solicitud realizar pedido enviada");
             }
             else{console.log(this.statusText, this.status)}
         }
@@ -302,7 +323,6 @@ function getUsuarios() {
                         var value = obj[key];
 
                         telefonosUsuarios .push(value.toString());
-
                     }
                 }
             }
@@ -317,6 +337,7 @@ function getUsuarios() {
 //obtine el tamano de DB Central
 function getTamañoCentral(){
 
+    drawTable(megasCentral,megasNodo);
     //++++++++++++++++++++++++++++++++++
     //SOLICITUD
     var xhttp = new XMLHttpRequest();
@@ -339,7 +360,8 @@ function getTamañoCentral(){
 
                         if(key.toString() === 'database_size'){
                             var value = obj[key];
-                            console.log("Tamaño DB Central: "+value)
+
+                            megasCentral=value;
                         }
 
                     }
@@ -356,6 +378,7 @@ function getTamañoCentral(){
 //obtine el tamano de DB Nodo
 function getTamañoNodo(){
 
+    drawTable(megasCentral,megasNodo);
     //++++++++++++++++++++++++++++++++++
     //SOLICITUD
     var xhttp = new XMLHttpRequest();
@@ -378,7 +401,8 @@ function getTamañoNodo(){
 
                         if(key.toString() === 'database_size'){
                             var value = obj[key];
-                            console.log("Tamaño DB Nodo: "+value)
+
+                            megasNodo=value;
                         }
 
                     }
@@ -411,3 +435,18 @@ function drawChart(Conn) {
     var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
     chart.draw(data, options);
 }
+
+function drawTable(Central,Nodo) {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'DB');
+    data.addColumn('string', 'Tamaño');
+    data.addRows([
+        ['Central',Central],
+        ['Nodo',Nodo]
+    ]);
+
+    var table = new google.visualization.Table(document.getElementById('table_div'));
+
+    table.draw(data, {width: '20%', height: '20%'});
+}
+

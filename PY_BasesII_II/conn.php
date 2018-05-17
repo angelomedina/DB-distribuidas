@@ -52,6 +52,7 @@ function registroClientes($telefono,$nombre,$primerApellido,$seguncoApellido,$co
         die( print_r( sqlsrv_errors(), true) );
     }
     sqlsrv_free_stmt( $stmt);
+    sqlsrv_close($conn);
 }
 
 function activarVale($telefono,$monto){
@@ -64,6 +65,7 @@ function activarVale($telefono,$monto){
         die( print_r( sqlsrv_errors(), true) );
     }
     sqlsrv_free_stmt( $stmt);
+    sqlsrv_close($conn);
 }
 
 function realizarPedido($telefono){
@@ -76,6 +78,7 @@ function realizarPedido($telefono){
         die( print_r( sqlsrv_errors(), true) );
     }
     sqlsrv_free_stmt( $stmt);
+    sqlsrv_close($conn);
 }
 
 function getUsuarios(){
