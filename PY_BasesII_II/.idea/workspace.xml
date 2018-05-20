@@ -12,11 +12,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="metodos.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="metodos.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/metodos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-213">
-              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state relative-caret-position="103">
+              <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
                 <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
@@ -30,6 +40,9 @@
                 <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
                 <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
                 <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+                <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+                <element signature="e#12797#12833#0" expanded="false" />
+                <element signature="e#13966#14086#0" expanded="false" />
                 <element signature="n#!!block;n#drawChart#0" expanded="false" />
                 <element signature="n#!!block;n#drawTable#0" expanded="false" />
               </folding>
@@ -37,14 +50,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="conn.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="34" column="95" lean-forward="false" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
+            <state relative-caret-position="969">
+              <caret line="180" column="23" lean-forward="false" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="23" />
               <folding>
-                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#conexion#0;n#!!top" expanded="false" />
+                <element signature="n#registroClientes#0;n#!!top" expanded="false" />
+                <element signature="n#activarVale#0;n#!!top" expanded="false" />
+                <element signature="n#realizarPedido#0;n#!!top" expanded="false" />
+                <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
+                <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
+                <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
+                <marker date="1526753772768" expanded="true" signature="2747:2775" ph="SELECT telef... usuario" />
+                <marker date="1526753772768" expanded="true" signature="4737:4800" ph="SELECT size " />
               </folding>
             </state>
           </provider>
@@ -65,6 +85,7 @@
     <findStrings>
       <find>cardT</find>
       <find>getUsuarios()</find>
+      <find>drawTable</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -75,13 +96,15 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/Documentacion/bases.html" />
         <option value="$PROJECT_DIR$/Documentacion/funcion.js" />
-        <option value="$PROJECT_DIR$/Documentacion/Query_PY_BasesII_II.sql" />
-        <option value="$PROJECT_DIR$/conn.php" />
         <option value="$PROJECT_DIR$/preuba.html" />
         <option value="$PROJECT_DIR$/prueba.css" />
         <option value="$PROJECT_DIR$/prueba.html" />
         <option value="$PROJECT_DIR$/estilos.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/pruebas/preuba.php" />
+        <option value="$PROJECT_DIR$/Documentacion/Query_PY_BasesII_II.sql" />
+        <option value="$PROJECT_DIR$/preuab.php" />
+        <option value="$PROJECT_DIR$/conn.php" />
         <option value="$PROJECT_DIR$/metodos.js" />
       </list>
     </option>
@@ -114,8 +137,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -282,11 +305,14 @@
       <workItem from="1526507513955" duration="46000" />
       <workItem from="1526507814000" duration="557000" />
       <workItem from="1526519095878" duration="10476000" />
+      <workItem from="1526620860014" duration="478000" />
+      <workItem from="1526739856568" duration="7597000" />
+      <workItem from="1526761644515" duration="2344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53650000" />
+    <option name="totallyTimeSpent" value="64069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -300,7 +326,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41527987" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21406959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -328,15 +354,23 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/metodos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="7718">
+          <caret line="454" column="43" lean-forward="false" selection-start-line="454" selection-start-column="43" selection-end-line="454" selection-end-column="43" />
           <folding>
             <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
             <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
@@ -350,6 +384,9 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -358,15 +395,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        <state relative-caret-position="3060">
+          <caret line="180" column="23" lean-forward="false" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="23" />
           <folding>
-            <element signature="e#156#321#0#PHP" expanded="false" />
-            <element signature="e#323#412#0#PHP" expanded="false" />
-            <element signature="e#414#494#0#PHP" expanded="false" />
-            <element signature="e#496#553#0#PHP" expanded="false" />
-            <element signature="e#555#622#0#PHP" expanded="false" />
-            <element signature="e#624#685#0#PHP" expanded="false" />
             <element signature="n#conexion#0;n#!!top" expanded="false" />
             <element signature="n#registroClientes#0;n#!!top" expanded="false" />
             <element signature="n#activarVale#0;n#!!top" expanded="false" />
@@ -374,27 +405,16 @@
             <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
             <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
             <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
-            <marker date="1526503376480" expanded="true" signature="2684:2712" ph="SELECT telef... usuario" />
-            <marker date="1526503376480" expanded="true" signature="3356:3368" ph="SELECT telef... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1526753772768" expanded="true" signature="2747:2775" ph="SELECT telef... usuario" />
+            <marker date="1526753772768" expanded="true" signature="4737:4800" ph="SELECT size " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/metodos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="2907">
+          <caret line="302" column="6" lean-forward="false" selection-start-line="302" selection-start-column="6" selection-end-line="302" selection-end-column="6" />
           <folding>
             <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
             <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
@@ -408,64 +428,9 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
-            <element signature="n#!!block;n#drawChart#0" expanded="false" />
-            <element signature="n#!!block;n#drawTable#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-          <folding>
-            <element signature="e#156#321#0#PHP" expanded="false" />
-            <element signature="e#323#412#0#PHP" expanded="false" />
-            <element signature="e#414#494#0#PHP" expanded="false" />
-            <element signature="e#496#553#0#PHP" expanded="false" />
-            <element signature="e#555#622#0#PHP" expanded="false" />
-            <element signature="e#624#685#0#PHP" expanded="false" />
-            <element signature="n#conexion#0;n#!!top" expanded="false" />
-            <element signature="n#registroClientes#0;n#!!top" expanded="false" />
-            <element signature="n#activarVale#0;n#!!top" expanded="false" />
-            <element signature="n#realizarPedido#0;n#!!top" expanded="false" />
-            <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
-            <marker date="1526503376480" expanded="true" signature="2684:2712" ph="SELECT telef... usuario" />
-            <marker date="1526503376480" expanded="true" signature="3356:3368" ph="SELECT telef... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="7" lean-forward="false" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/metodos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
-            <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
-            <element signature="n#!!block;n#numeroAleatorio#0" expanded="false" />
-            <element signature="n#!!block;n#generaClientes#0" expanded="false" />
-            <element signature="n#!!block;n#generaVales#0" expanded="false" />
-            <element signature="n#!!block;n#generaPedidos#0" expanded="false" />
-            <element signature="n#!!block;n#registroClientes#0" expanded="false" />
-            <element signature="n#!!block;n#activarVale#0" expanded="false" />
-            <element signature="n#!!block;n#realizarPedido#0" expanded="false" />
-            <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
-            <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
-            <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -474,36 +439,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="7" lean-forward="false" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-          <folding>
-            <element signature="e#156#321#0#PHP" expanded="false" />
-            <element signature="e#323#412#0#PHP" expanded="false" />
-            <element signature="e#414#494#0#PHP" expanded="false" />
-            <element signature="e#496#553#0#PHP" expanded="false" />
-            <element signature="e#555#622#0#PHP" expanded="false" />
-            <element signature="e#624#685#0#PHP" expanded="false" />
-            <element signature="n#conexion#0;n#!!top" expanded="false" />
-            <element signature="n#registroClientes#0;n#!!top" expanded="false" />
-            <element signature="n#activarVale#0;n#!!top" expanded="false" />
-            <element signature="n#realizarPedido#0;n#!!top" expanded="false" />
-            <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
-            <marker date="1526503376480" expanded="true" signature="2684:2712" ph="SELECT telef... usuario" />
-            <marker date="1526503376480" expanded="true" signature="3356:3368" ph="SELECT telef... usuario" />
-          </folding>
+        <state relative-caret-position="612">
+          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -524,6 +462,166 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
+            <element signature="n#!!block;n#drawChart#0" expanded="false" />
+            <element signature="n#!!block;n#drawTable#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="95" lean-forward="false" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metodos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#numeroAleatorio#0" expanded="false" />
+            <element signature="n#!!block;n#generaClientes#0" expanded="false" />
+            <element signature="n#!!block;n#generaVales#0" expanded="false" />
+            <element signature="n#!!block;n#generaPedidos#0" expanded="false" />
+            <element signature="n#!!block;n#registroClientes#0" expanded="false" />
+            <element signature="n#!!block;n#activarVale#0" expanded="false" />
+            <element signature="n#!!block;n#realizarPedido#0" expanded="false" />
+            <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
+            <element signature="n#!!block;n#drawChart#0" expanded="false" />
+            <element signature="n#!!block;n#drawTable#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metodos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#numeroAleatorio#0" expanded="false" />
+            <element signature="n#!!block;n#generaClientes#0" expanded="false" />
+            <element signature="n#!!block;n#generaVales#0" expanded="false" />
+            <element signature="n#!!block;n#generaPedidos#0" expanded="false" />
+            <element signature="n#!!block;n#registroClientes#0" expanded="false" />
+            <element signature="n#!!block;n#activarVale#0" expanded="false" />
+            <element signature="n#!!block;n#realizarPedido#0" expanded="false" />
+            <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
+            <element signature="n#!!block;n#drawChart#0" expanded="false" />
+            <element signature="n#!!block;n#drawTable#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="7" lean-forward="false" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metodos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#numeroAleatorio#0" expanded="false" />
+            <element signature="n#!!block;n#generaClientes#0" expanded="false" />
+            <element signature="n#!!block;n#generaVales#0" expanded="false" />
+            <element signature="n#!!block;n#generaPedidos#0" expanded="false" />
+            <element signature="n#!!block;n#registroClientes#0" expanded="false" />
+            <element signature="n#!!block;n#activarVale#0" expanded="false" />
+            <element signature="n#!!block;n#realizarPedido#0" expanded="false" />
+            <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
+            <element signature="n#!!block;n#drawChart#0" expanded="false" />
+            <element signature="n#!!block;n#drawTable#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="7" lean-forward="false" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/metodos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
+            <element signature="n#!!block;n#numeroAleatorio#0" expanded="false" />
+            <element signature="n#!!block;n#generaClientes#0" expanded="false" />
+            <element signature="n#!!block;n#generaVales#0" expanded="false" />
+            <element signature="n#!!block;n#generaPedidos#0" expanded="false" />
+            <element signature="n#!!block;n#registroClientes#0" expanded="false" />
+            <element signature="n#!!block;n#activarVale#0" expanded="false" />
+            <element signature="n#!!block;n#realizarPedido#0" expanded="false" />
+            <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -534,10 +632,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -545,23 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2312">
           <caret line="136" column="25" lean-forward="false" selection-start-line="136" selection-start-column="25" selection-end-line="136" selection-end-column="25" />
-          <folding>
-            <element signature="e#156#321#0#PHP" expanded="false" />
-            <element signature="e#323#412#0#PHP" expanded="false" />
-            <element signature="e#414#494#0#PHP" expanded="false" />
-            <element signature="e#496#553#0#PHP" expanded="false" />
-            <element signature="e#555#622#0#PHP" expanded="false" />
-            <element signature="e#624#685#0#PHP" expanded="false" />
-            <element signature="n#conexion#0;n#!!top" expanded="false" />
-            <element signature="n#registroClientes#0;n#!!top" expanded="false" />
-            <element signature="n#activarVale#0;n#!!top" expanded="false" />
-            <element signature="n#realizarPedido#0;n#!!top" expanded="false" />
-            <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
-            <marker date="1526503376480" expanded="true" signature="2684:2712" ph="SELECT telef... usuario" />
-            <marker date="1526503376480" expanded="true" signature="3356:3368" ph="SELECT telef... usuario" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,6 +660,9 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -592,10 +673,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="46" column="158" lean-forward="false" selection-start-line="46" selection-start-column="138" selection-end-line="46" selection-end-column="158" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -616,6 +694,9 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -626,10 +707,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -637,10 +715,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="47" column="125" lean-forward="true" selection-start-line="47" selection-start-column="125" selection-end-line="47" selection-end-column="125" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -648,23 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
           <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="22" />
-          <folding>
-            <element signature="e#156#321#0#PHP" expanded="false" />
-            <element signature="e#323#412#0#PHP" expanded="false" />
-            <element signature="e#414#494#0#PHP" expanded="false" />
-            <element signature="e#496#553#0#PHP" expanded="false" />
-            <element signature="e#555#622#0#PHP" expanded="false" />
-            <element signature="e#624#685#0#PHP" expanded="false" />
-            <element signature="n#conexion#0;n#!!top" expanded="false" />
-            <element signature="n#registroClientes#0;n#!!top" expanded="false" />
-            <element signature="n#activarVale#0;n#!!top" expanded="false" />
-            <element signature="n#realizarPedido#0;n#!!top" expanded="false" />
-            <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
-            <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
-            <marker date="1526503376480" expanded="true" signature="2684:2712" ph="SELECT telef... usuario" />
-            <marker date="1526503376480" expanded="true" signature="3356:3368" ph="SELECT telef... usuario" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -685,6 +743,9 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -695,10 +756,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,6 +777,9 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
@@ -729,10 +790,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -747,10 +805,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -765,10 +820,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -781,48 +833,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Documentacion/bases.html" />
     <entry file="file://$PROJECT_DIR$/Documentacion/funcion.js" />
-    <entry file="file://$PROJECT_DIR$/Documentacion/Query_PY_BasesII_II.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="182" column="0" lean-forward="true" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preuba.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="51" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prueba.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/prueba.html">
+    <entry file="file://$PROJECT_DIR$/preuba.html" />
+    <entry file="file://$PROJECT_DIR$/prueba.css" />
+    <entry file="file://$PROJECT_DIR$/prueba.html" />
+    <entry file="file://$PROJECT_DIR$/estilos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="52" />
-          <folding />
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Documentacion/Query_PY_BasesII_II.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="265" column="19" lean-forward="true" selection-start-line="265" selection-start-column="19" selection-end-line="265" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pruebas/preuba.php" />
+    <entry file="file://$PROJECT_DIR$/preuab.php" />
     <entry file="file://$PROJECT_DIR$/conn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="70" column="35" lean-forward="false" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        <state relative-caret-position="969">
+          <caret line="180" column="23" lean-forward="false" selection-start-line="180" selection-start-column="19" selection-end-line="180" selection-end-column="23" />
           <folding>
-            <element signature="e#156#321#0#PHP" expanded="false" />
-            <element signature="e#323#412#0#PHP" expanded="false" />
-            <element signature="e#414#494#0#PHP" expanded="false" />
-            <element signature="e#496#553#0#PHP" expanded="false" />
-            <element signature="e#555#622#0#PHP" expanded="false" />
-            <element signature="e#624#685#0#PHP" expanded="false" />
             <element signature="n#conexion#0;n#!!top" expanded="false" />
             <element signature="n#registroClientes#0;n#!!top" expanded="false" />
             <element signature="n#activarVale#0;n#!!top" expanded="false" />
@@ -830,35 +864,16 @@
             <element signature="n#getUsuarios#0;n#!!top" expanded="false" />
             <element signature="n#getTamañoCentral#0;n#!!top" expanded="false" />
             <element signature="n#getTamañoNodo#0;n#!!top" expanded="false" />
-            <marker date="1526503376480" expanded="true" signature="2684:2712" ph="SELECT telef... usuario" />
-            <marker date="1526503376480" expanded="true" signature="3356:3368" ph="SELECT telef... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/estilos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="34" column="95" lean-forward="false" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1526753772768" expanded="true" signature="2747:2775" ph="SELECT telef... usuario" />
+            <marker date="1526753772768" expanded="true" signature="4737:4800" ph="SELECT size " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/metodos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-213">
-          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="103">
+          <caret line="157" column="0" lean-forward="false" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#resetGraficos#0" expanded="false" />
             <element signature="n#!!block;n#cargaGraficos#0" expanded="false" />
@@ -872,9 +887,20 @@
             <element signature="n#!!block;n#getUsuarios#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoCentral#0" expanded="false" />
             <element signature="n#!!block;n#getTamañoNodo#0" expanded="false" />
+            <element signature="n#!!block;n#getTamañoFile#0" expanded="false" />
+            <element signature="e#12797#12833#0" expanded="false" />
+            <element signature="e#13966#14086#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#drawTable#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>

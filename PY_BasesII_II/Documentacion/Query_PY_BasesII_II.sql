@@ -58,19 +58,43 @@ create table solicitud
 
 
 -------------------------------------------------------------------------------------------------------------------------------------
-
 --drop database Nodo_ServidorCentral
 
 create database Nodo_ServidorCentral
 use Nodo_ServidorCentral
 
+--configuro los file stream
+exec sp_configure filestream_access_level,2
+reconfigure
+
+
+--agrego discos
+alter database Nodo_ServidorCentral
+ADD   FILEGROUP FileStreamGroup Contains filestream
+go
+
+alter database Nodo_ServidorCentral
+add file (
+  name = 'FileStreamFile',
+  FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\Nodo_ServidorCentral'
+)
+To FILEGROUP FileStreamGroup
+go
+
+
+
 create table documento
 (
     codigo          int IDENTITY(1,1),
-	documento       varbinary(max) NULL,
+	idDocumento     uniqueidentifier not null unique rowguidcol default newid(),
+	documento       varbinary(max) filestream null,
 	idSolicitud     int not null,
     constraint  pk_codigo_documento  primary key (codigo),
 );
+
+--insert into documento(documento,idSolicitud) values ((Select BulkColumn from openrowset(Bulk 'E:\Doccumentos TEC\5 SEMESTRE 2018\BASES II\Proyectos\v1.wmv',SINGLE_BLOB) AS BLOB),1);
+
+
 
 create table solicitud
 (
@@ -181,9 +205,10 @@ exec activarVale '1111-1111',1000,0
 
 --Realizar solicitud
 
+--drop procedure  realizarPedido
 
 create PROCEDURE realizarPedido
-  @telefono		   varchar(9),
+    @telefono		   varchar(9),
 	@respuesta         BIT OUTPUT
 AS
 Declare
@@ -212,7 +237,8 @@ Declare
 
 
 									  --insertamos documento
-									  insert into documento(documento,idSolicitud) values(0x45003A005C0044006F006300630075006D0065006E0074006F0073002000,@idSolicitud);
+									  insert into documento(documento,idSolicitud) values ((Select BulkColumn from openrowset(Bulk 'E:\Doccumentos TEC\5 SEMESTRE 2018\BASES II\Proyectos\Segundo proyecto.pdf',SINGLE_BLOB) AS Nodo),@idSolicitud);
+										--insert into videos(FileData) values ((Select BulkColumn from openrowset(Bulk 'E:\Doccumentos TEC\5 SEMESTRE 2018\BASES II\Proyectos\Segundo proyecto.pdf',SINGLE_BLOB) AS BLOB));
 
 									  --solicitud central
 									  insert into [localhost].ServidorCentral.dbo.solicitud (id,fecha,monto,telefono) values(@idSolicitud ,@fecha,500,@telefono);
@@ -240,10 +266,20 @@ Declare
 					END CATCH
 		SET NOCOUNT OFF;
    end
-
 GO
 
 
-exec  realizarPedido '1111-1111',null,0
+exec  realizarPedido '7227-9636',0
 
 select * from [localhost].ServidorCentral.dbo.cliente
+
+
+select * from documento
+
+SP_SPACEUSED
+
+
+
+
+SELECT size/128.0 Tamaño
+FROM sys.database_files where name='FileStreamFile';

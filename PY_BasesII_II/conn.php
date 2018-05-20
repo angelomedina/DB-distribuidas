@@ -26,6 +26,10 @@ if ($_GET['func']=='getTamañoNodo()'){
     getTamañoNodo();
 }
 
+if ($_GET['func']=='getTamañoFile()'){
+    getTamañoFile();
+}
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //FUNCIONES
 function conexion(){
@@ -162,5 +166,35 @@ function getTamañoNodo(){
     sqlsrv_close($conn);
 
     echo json_encode($result);
+
+}
+
+function getTamañoFile(){
+    $serverName = "localhost\sqlexpress,1433";
+    $connectionInfo = array( "Database"=>"Nodo_ServidorCentral", "UID"=>"sa", "PWD"=>"deathnote");
+    $conn = sqlsrv_connect( $serverName, $connectionInfo);
+
+    if( $conn === false ) {
+        die( print_r( sqlsrv_errors(), true));
+    }
+
+    $sql = "SELECT size FROM sys.database_files where name='FileStreamFile';";
+    $stmt = sqlsrv_query($conn, $sql);
+
+    $result = array();
+
+    do {
+        while ($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){
+            $result[] = $row;
+        }
+    }   while (sqlsrv_next_result($stmt));
+
+
+    sqlsrv_free_stmt($stmt);
+    sqlsrv_close($conn);
+
+    echo json_encode($result);
+
+
 
 }

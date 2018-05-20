@@ -9,13 +9,15 @@ var telefonosUsuarios = [];
 var conexionesDB=0;
 var megasNodo="0";
 var megasCentral="0";
+var megasFIle="0";
 
 
 function resetGraficos() {
     conexionesDB=0;
     megasNodo="0";
     megasCentral="0";
-    drawTable("0","0");
+    megasFIle="0";
+    drawTable("0","0","0");
     drawChart(0);
 
     document.getElementById('cantidad_registro_clientes').value="";
@@ -28,7 +30,7 @@ function resetGraficos() {
 }
 
 function cargaGraficos() {
-    drawTable("0","0");
+    drawTable("0","0","0");
     drawChart(0);
 
 }
@@ -134,7 +136,8 @@ function generaVales() {
                 activarVale(telefono);
             }
             else{
-                alert("No hay telefonos registrados en DB");
+                //alert("No hay telefonos registrados en DB");
+                console.log("Error : generar vaeles: telefono no registrados")
             }
             cont++;
 
@@ -187,7 +190,7 @@ function generaPedidos() {
                 realizarPedido(telefono);
             }
             else{
-                alert("No hay telefonos registrados en DB");
+                console.log("Error : generar pedidos: telefono no registrados")
             }
             cont++;
 
@@ -231,6 +234,7 @@ function registroClientes(ptelefono) {
             if(this.statusText== "OK" && this.status == 200) {
                 getTamañoCentral();
                 getTamañoNodo();
+                getTamañoFile();
                 conexionesDB=conexionesDB+1;
                 //grafico
                 drawChart(conexionesDB);
@@ -259,6 +263,7 @@ function activarVale(ptelefono) {
             if(this.statusText== "OK" && this.status == 200) {
                 getTamañoCentral();
                 getTamañoNodo();
+                getTamañoFile();
                 conexionesDB=conexionesDB+1;
                 //grafico
                 drawChart(conexionesDB);
@@ -286,6 +291,7 @@ function realizarPedido(ptelefono) {
             if(this.statusText== "OK" && this.status == 200) {
                 getTamañoCentral();
                 getTamañoNodo();
+                getTamañoFile();
                 conexionesDB=conexionesDB+1;
                 //grafico
                 drawChart(conexionesDB);
@@ -300,7 +306,7 @@ function realizarPedido(ptelefono) {
 
 // proyeccion de los telefonos de los usuarios: los guarda en una lista
 function getUsuarios() {
-    telefonosUsuarios = [];
+    //telefonosUsuarios = [];
     //++++++++++++++++++++++++++++++++++
     //SOLICITUD
     var xhttp = new XMLHttpRequest();
@@ -337,7 +343,7 @@ function getUsuarios() {
 //obtine el tamano de DB Central
 function getTamañoCentral(){
 
-    drawTable(megasCentral,megasNodo);
+    drawTable(megasCentral,megasNodo,megasFIle);
     //++++++++++++++++++++++++++++++++++
     //SOLICITUD
     var xhttp = new XMLHttpRequest();
@@ -378,7 +384,7 @@ function getTamañoCentral(){
 //obtine el tamano de DB Nodo
 function getTamañoNodo(){
 
-    drawTable(megasCentral,megasNodo);
+    drawTable(megasCentral,megasNodo,megasFIle);
     //++++++++++++++++++++++++++++++++++
     //SOLICITUD
     var xhttp = new XMLHttpRequest();
@@ -411,7 +417,53 @@ function getTamañoNodo(){
             else{console.log(this.statusText, this.status)}
         }
     };
-    xhttp.open("GET", "conn.php?func=getTamañoCentral()", true);
+    xhttp.open("GET", "conn.php?func=getTamañoNodo()", true);
+    xhttp.send();
+
+}
+
+function getTamañoFile(){
+
+    drawTable(megasCentral,megasNodo,megasFIle);
+    //++++++++++++++++++++++++++++++++++
+    //SOLICITUD
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.statusText== "OK" && this.status == 200) {
+
+                var json = this.response;
+
+                var arr = JSON.parse(json);
+
+                conexionesDB=conexionesDB+1;
+                //grafico
+                drawChart(conexionesDB);
+
+
+                for (var i = 0; i < arr.length; i++){
+                    var obj = arr[i];
+
+                    for (var key in obj){
+                        if(key.toString() === 'size'){
+                            var value = obj[key];
+
+                            var size = value.toString();
+                            var size2 = parseInt(size);
+                            var size3 =  size2/128.0;
+
+                            megasFIle=size3.toString();
+                        }
+
+                    }
+                }
+
+            }
+            else{console.log(this.statusText, this.status)}
+        }
+    };
+    xhttp.open("GET", "conn.php?func=getTamañoFile()", true);
     xhttp.send();
 
 }
@@ -436,13 +488,14 @@ function drawChart(Conn) {
     chart.draw(data, options);
 }
 
-function drawTable(Central,Nodo) {
+function drawTable(Central,Nodo,File) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'DB');
     data.addColumn('string', 'Tamaño');
     data.addRows([
         ['Central',Central],
-        ['Nodo',Nodo]
+        ['Nodo',Nodo],
+        ['File',File]
     ]);
 
     var table = new google.visualization.Table(document.getElementById('table_div'));
